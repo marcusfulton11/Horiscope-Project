@@ -33,3 +33,16 @@ const starSigns = {
      let randomIndex = randomNumberGenerator(keyValue.length);
      messageData.push(keyValue[randomIndex]);
  };
+ 
+ // Main Function. this will log the Message on to the screen 
+ const astrologyMessage = (Array) => {
+    let messageToShow = [];
+    let dateOfBirth = Array[0];
+    messageToShow.push(`My guess is that your star sign is - ${Array[0]} So, You were born between ${starSigns[dateOfBirth]}`);
+    messageToShow.push(`Your luck-metre says - ${Array[1]}`);
+    messageToShow.push(`My Advice to you is - "${Array[2]}"`);
+    const theMessageString = messageToShow.join('\n');
+    console.log(theMessageString);
+};
+
+astrologyMessage(messageData);
