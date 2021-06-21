@@ -1,9 +1,10 @@
 const randomNumberGenerator = (number) => {
     let randomNum = Math.floor(Math.random() * number);
     return randomNum;
+
 };
 
-// Wisdom variable
+// creates arrays with info about starSigns and such. 
 const astrologyInformation = {
     signs: ['Aries', 'Taurus', 'Gemini', 'Cancer', 'Leo', 'Virgo', 'Libra', 'Scorpio', 'Capricorn', 'Aquarius', 'Pisces'],
     fortune: ['you will have good luck!', 'your luck will be ok', 'you will have very good luck!', 'you will have bad luck!', 'oh no, very bad luck!'],
@@ -11,7 +12,7 @@ const astrologyInformation = {
               'Don\'t be afraid of being afraid','Don\'t make decisions when you are angry', 'Don\'t worry what other people think',
                'Do what is right, not what is easy', ' Believe in yourself']
 };
-const timesOfBorn = {
+const starSigns = {
     Aries: 'March 21 – April 20',
     Taurus: 'April 21 – May 20',
     Gemini: 'May 21 – June 21',
@@ -23,4 +24,12 @@ const timesOfBorn = {
     Capricorn: 'December 22 – January 20',
     Aquarius: 'January 21 – February 19',
     Pisces: 'February 20 – March 20',
+ };
+
+ // To store random message in 'messageData'
+ let messageData = [];
+ for (let prop in astrologyInformation) {
+     let keyValue = astrologyInformation[prop];
+     let randomIndex = randomNumberGenerator(keyValue.length);
+     messageData.push(keyValue[randomIndex]);
  };
